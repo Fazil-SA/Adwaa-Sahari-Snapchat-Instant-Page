@@ -7,6 +7,21 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Snap Pixel Code -->
+<script type='text/javascript'>
+(function(e,t,n){if(e.snaptr)return;var a=e.snaptr=function()
+{a.handleRequest?a.handleRequest.apply(a,arguments):a.queue.push(arguments)};
+a.queue=[];var s='script';r=t.createElement(s);r.async=!0;
+r.src=n;var u=t.getElementsByTagName(s)[0];
+u.parentNode.insertBefore(r,u);})(window,document,
+'https://sc-static.net/scevent.min.js');
+
+snaptr('init', 'ee9b4a6a-6ba9-4c9f-baf3-c7e7a1916d4a');
+
+snaptr('track', 'PAGE_VIEW');
+</script>
+<!-- End Snap Pixel Code -->
 <style>
   :root{
     --green:#25D366;
@@ -194,6 +209,11 @@
   var msg = "مرحباً، شاهدت إعلانكم على سناب شات وأرغب في معرفة المزيد من التفاصيل.";
   document.getElementById("waBtn").href =
     "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
+
+  // Track WhatsApp button click in Snap Pixel
+  document.getElementById("waBtn").addEventListener("click", function(){
+    if (window.snaptr) { snaptr('track', 'CUSTOM_EVENT_1'); }
+  });
 
   // Thumbnail swap
   var hero = document.getElementById("heroImg");
